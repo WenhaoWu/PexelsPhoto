@@ -2531,16 +2531,17 @@ containing a value of this type.
         public static final int design_fab_background=0x7f020045;
         public static final int design_snackbar_background=0x7f020046;
         public static final int ic_bing=0x7f020047;
-        public static final int ic_favorite_black_24dp=0x7f020048;
-        public static final int ic_menu_camera=0x7f020049;
-        public static final int ic_menu_gallery=0x7f02004a;
-        public static final int ic_menu_manage=0x7f02004b;
-        public static final int ic_menu_send=0x7f02004c;
-        public static final int ic_menu_share=0x7f02004d;
-        public static final int ic_menu_slideshow=0x7f02004e;
-        public static final int ic_wallpaper_black_24dp=0x7f02004f;
-        public static final int notification_template_icon_bg=0x7f020051;
-        public static final int side_nav_bar=0x7f020050;
+        public static final int ic_cached_black_48dp=0x7f020048;
+        public static final int ic_favorite_black_24dp=0x7f020049;
+        public static final int ic_menu_camera=0x7f02004a;
+        public static final int ic_menu_gallery=0x7f02004b;
+        public static final int ic_menu_manage=0x7f02004c;
+        public static final int ic_menu_send=0x7f02004d;
+        public static final int ic_menu_share=0x7f02004e;
+        public static final int ic_menu_slideshow=0x7f02004f;
+        public static final int ic_wallpaper_black_24dp=0x7f020050;
+        public static final int notification_template_icon_bg=0x7f020052;
+        public static final int side_nav_bar=0x7f020051;
     }
     public static final class id {
         public static final int RV_CV_img=0x7f0c007e;
