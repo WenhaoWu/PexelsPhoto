@@ -20,5 +20,7 @@ If you just wanna test the .apk file the location of it is:
 
 [Fresco](http://frescolib.org)
 
+[MVP](https://github.com/konmik/konmik.github.io/wiki/Introduction-to-Model-View-Presenter-on-Android)
+
 ##LICENSE
 [Apache License](https://github.com/WenhaoWu/BingWallpaper/blob/master/LICENSE)
