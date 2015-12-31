@@ -6,6 +6,9 @@ Call the bing wallpaper ajax request to retrieve the daily wall paper
 
 ![Wallpaper Preview](https://github.com/WenhaoWu/BingWallpaper/blob/master/Demo_Pics/Preview.png)
 
+##API
+http://www.bing.com/HPImageArchive.aspx?format=js&n=8&idx=1
+
 ##Usage
 Due to the setting of volley, before compiling the project you need to put volley into the root directory first. You can get the latest version of volley from this link:
 
@@ -19,6 +22,8 @@ If you just wanna test the .apk file the location of it is:
 [Volley](https://github.com/mcxiaoke/android-volley)
 
 [Fresco](http://frescolib.org)
+
+[MVP](https://github.com/konmik/konmik.github.io/wiki/Introduction-to-Model-View-Presenter-on-Android)
 
 ##LICENSE
 [Apache License](https://github.com/WenhaoWu/BingWallpaper/blob/master/LICENSE)
