@@ -2633,10 +2633,10 @@ containing a value of this type.
         public static final int middle=0x7f0c0038;
         public static final int mini=0x7f0c002f;
         public static final int multiply=0x7f0c0026;
+        public static final int nav_favourite=0x7f0c0091;
         public static final int nav_gallery=0x7f0c0090;
         public static final int nav_send=0x7f0c0093;
         public static final int nav_share=0x7f0c0092;
-        public static final int nav_slideshow=0x7f0c0091;
         public static final int nav_view=0x7f0c0071;
         public static final int navigation_header_container=0x7f0c0079;
         public static final int never=0x7f0c003c;

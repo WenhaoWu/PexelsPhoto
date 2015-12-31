@@ -3,7 +3,6 @@ package wenhao.practice.bingwallpaper;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -44,8 +43,8 @@ public class View_MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                presenter.prepareItem(17);
+                presenter.onTakeView(View_MainActivity.this);
             }
         });
 
@@ -69,9 +68,8 @@ public class View_MainActivity extends AppCompatActivity
 
         if (presenter == null){
             presenter = new Presenter_MainPresenter(this);
-            Log.e("Here","here");
         }
-        presenter.prepareItem();
+        presenter.prepareItem(0);
         presenter.onTakeView(this);
     }
 
@@ -104,7 +102,7 @@ public class View_MainActivity extends AppCompatActivity
             return true;
         }
         else if (id == R.id.action_refresh){
-            presenter.prepareItem();
+            presenter.prepareItem(0);
             presenter.onTakeView(this);
             return true;
         }
@@ -117,6 +115,12 @@ public class View_MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        if (id==R.id.nav_gallery){
+            presenter.onTakeView(this);
+        }
+        else if (id == R.id.nav_favourite){
+            Toast.makeText(getBaseContext(),"Not Done",Toast.LENGTH_SHORT).show();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -134,7 +138,9 @@ public class View_MainActivity extends AppCompatActivity
     }
 
     public void onItemsNext(ArrayList<Object_Wallpaper> mWallpapers) {
-        //mAdapter.clearAll();
+        if (mWallpapers.size()==18){
+            Toast.makeText(getBaseContext(),"Bing's API only provides wallpapers of the last 18 days...",Toast.LENGTH_SHORT).show();
+        }
         mAdapter.setDataList(mWallpapers);
     }
 

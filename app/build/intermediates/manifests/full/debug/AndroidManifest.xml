@@ -21,6 +21,7 @@
         <activity
             android:name="wenhao.practice.bingwallpaper.View_MainActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +32,7 @@
         <activity
             android:name="wenhao.practice.bingwallpaper.View_ImageFullActivity"
             android:label="@string/title_activity_view__image_full_view"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

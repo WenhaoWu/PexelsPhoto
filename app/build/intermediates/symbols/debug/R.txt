@@ -697,10 +697,10 @@ int id media_actions 0x7f0c0086
 int id middle 0x7f0c0038
 int id mini 0x7f0c002f
 int id multiply 0x7f0c0026
+int id nav_favourite 0x7f0c0091
 int id nav_gallery 0x7f0c0090
 int id nav_send 0x7f0c0093
 int id nav_share 0x7f0c0092
-int id nav_slideshow 0x7f0c0091
 int id nav_view 0x7f0c0071
 int id navigation_header_container 0x7f0c0079
 int id never 0x7f0c003c

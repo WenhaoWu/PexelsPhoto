@@ -7,7 +7,7 @@
 .DS_Store
 /build
 /captures
-.README.md
+/README.md
 =======
 # Built application files
 *.apk

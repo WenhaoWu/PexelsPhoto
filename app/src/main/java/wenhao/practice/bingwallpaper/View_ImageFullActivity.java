@@ -37,7 +37,7 @@ public class View_ImageFullActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view__image_full_view);
 
-        //hiding the status bar
+        //hiding the status bar and navigation bar (Immersive sticky mode)
         View decorView = getWindow().getDecorView();
         int uiOption =View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION

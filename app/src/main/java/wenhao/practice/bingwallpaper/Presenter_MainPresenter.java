@@ -19,7 +19,7 @@ public class Presenter_MainPresenter {
         this.mContext = mContext;
     }
 
-    public void prepareItem (){
+    public void prepareItem (final int idx){
         Model_GetImages.getImages(new Model_GetImages.volleyCallback() {
             @Override
             public void onSuccess(ArrayList<Object_Wallpaper> items) {
@@ -29,10 +29,11 @@ public class Presenter_MainPresenter {
 
             @Override
             public void onFail(Throwable error) {
+                //mAdapter.clearAll();
                 mError = error;
                 publish();
             }
-        }, 0, mContext);
+        }, idx, mContext);
     }
 
     public void onTakeView(View_MainActivity view){
