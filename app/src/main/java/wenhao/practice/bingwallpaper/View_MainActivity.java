@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -68,6 +69,7 @@ public class View_MainActivity extends AppCompatActivity
 
         if (presenter == null){
             presenter = new Presenter_MainPresenter(this);
+            Log.e("Here","here");
         }
         presenter.prepareItem();
         presenter.onTakeView(this);
@@ -101,6 +103,11 @@ public class View_MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+        else if (id == R.id.action_refresh){
+            presenter.prepareItem();
+            presenter.onTakeView(this);
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -118,14 +125,16 @@ public class View_MainActivity extends AppCompatActivity
 
     @Override
     protected void onDestroy() {
+        Log.e("Here","hereDestroy");
         super.onDestroy();
         presenter.onTakeView(null);
         if (isFinishing())
             presenter = null;
+
     }
 
     public void onItemsNext(ArrayList<Object_Wallpaper> mWallpapers) {
-        mAdapter.clearAll();
+        //mAdapter.clearAll();
         mAdapter.setDataList(mWallpapers);
     }
 

@@ -39,14 +39,15 @@ public class Model_GetImages {
                     @Override
                     public void onResponse(JSONObject response) {
                         ArrayList<Object_Wallpaper> result = new ArrayList<>();
-                        String img_url = null, img_copy = null, realURL;
+                        String img_url = null, img_copy = null, realURL, img_date;
                         try {
                             for (int i = 0; i < response.getJSONArray("images").length(); i++){
                                 img_url = response.getJSONArray("images").getJSONObject(i).getString("url");
                                 img_copy = response.getJSONArray("images").getJSONObject(i).getString("copyright");
+                                img_date = response.getJSONArray("images").getJSONObject(i).getString("startdate");
                                 img_url = img_url.replace("1920x1080","1080x1920");
                                 realURL = "http://www.bing.com"+img_url;
-                                result.add(new Object_Wallpaper(realURL, img_copy));
+                                result.add(new Object_Wallpaper(realURL, img_copy,img_date));
                             }
                         }
                         catch (JSONException e) {

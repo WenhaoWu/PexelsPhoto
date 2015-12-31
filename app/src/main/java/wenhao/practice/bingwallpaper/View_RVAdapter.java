@@ -37,7 +37,9 @@ public class View_RVAdapter extends RecyclerView.Adapter<View_RVAdapter.mViewHol
     }
 
     public void setDataList(ArrayList<Object_Wallpaper> dataList) {
-        this.dataList = dataList;
+        this.dataList.clear();
+        this.dataList.addAll(dataList);
+        notifyDataSetChanged();
     }
 
     public static class mViewHolder extends RecyclerView.ViewHolder{
@@ -70,6 +72,7 @@ public class View_RVAdapter extends RecyclerView.Adapter<View_RVAdapter.mViewHol
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.putExtra(View_ImageFullActivity.Tag_imgUrl, dataList.get(position).getImg_url());
+                intent.putExtra(View_ImageFullActivity.Tag_imgDate, dataList.get(position).getDate());
                 intent.setClass(mContext, View_ImageFullActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
@@ -90,7 +93,7 @@ public class View_RVAdapter extends RecyclerView.Adapter<View_RVAdapter.mViewHol
         display.getMetrics(dm);
 
         //Greater ratio smaller proportion
-        double ratio = 3.0;
+        double ratio = 2.7;
 
         return (int) (dm.heightPixels / ratio);
     }
