@@ -32,5 +32,14 @@
 
     </RelativeLayout>
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fab_back"
+        app:rippleColor="@color/colorPrimary"
+        android:src="@drawable/ic_reply_black_24dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|start"/>
+
 
 </android.support.design.widget.CoordinatorLayout>

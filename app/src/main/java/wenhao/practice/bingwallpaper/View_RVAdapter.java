@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -37,9 +38,15 @@ public class View_RVAdapter extends RecyclerView.Adapter<View_RVAdapter.mViewHol
     }
 
     public void setDataList(ArrayList<Object_Wallpaper> dataList) {
-        this.dataList.clear();
-        this.dataList.addAll(dataList);
-        notifyDataSetChanged();
+        if (dataList.equals(this.dataList)){
+            Toast.makeText(mContext,"That's all :)",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            this.dataList.clear();
+            this.dataList.addAll(dataList);
+            notifyDataSetChanged();
+        }
+
     }
 
     public static class mViewHolder extends RecyclerView.ViewHolder{

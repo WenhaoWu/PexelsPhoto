@@ -1,12 +1,14 @@
 package wenhao.practice.bingwallpaper;
 
 import android.app.WallpaperManager;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -69,7 +71,7 @@ public class View_ImageFullActivity extends AppCompatActivity {
         FloatingActionButton fab_dl = (FloatingActionButton)findViewById(R.id.fab_download);
         fab_dl.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 getBitmapFromUrl(getIntent().getStringExtra(Tag_imgUrl), 2, new imgReqCallback() {
                     @Override
                     public void onSuccess(Bitmap bitmap) {
@@ -79,7 +81,7 @@ public class View_ImageFullActivity extends AppCompatActivity {
                         }
 
                         OutputStream fOut = null;
-                        File file = new File(dir, getIntent().getStringExtra(Tag_imgDate)+".jpg"); // the File to save to
+                        final File file = new File(dir, getIntent().getStringExtra(Tag_imgDate)+".jpg"); // the File to save to
                         if (file.exists()){
                             Toast.makeText(getBaseContext(),"Downloaded already",Toast.LENGTH_SHORT).show();
                         }
@@ -90,15 +92,38 @@ public class View_ImageFullActivity extends AppCompatActivity {
                                 fOut.flush();
                                 fOut.close(); // do not forget to close the stream
                                 MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), file.getName(), file.getName());
-                                Toast.makeText(getBaseContext(), "Downloaded", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getBaseContext(),"Downloaded",Toast.LENGTH_SHORT).show();
                             } catch (FileNotFoundException e) {
                                 Log.e("intoFNFE",e.toString());
                             } catch (IOException e) {
                                 Log.e("intoIOE", e.toString());
                             }
                         }
+                        Snackbar.make(v, "Download Succeed", Snackbar.LENGTH_SHORT).setAction("Show", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent();
+                                intent.setAction(Intent.ACTION_VIEW);
+                                try {
+                                    intent.setDataAndType(Uri.fromFile(file), "image/*");
+                                    Log.e("File Path", file.getCanonicalPath());
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
+                                startActivity(intent);
+                            }
+                        }).show();
                     }
                 });
+            }
+        });
+
+        FloatingActionButton fab_back = (FloatingActionButton)findViewById(R.id.fab_back);
+        fab_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 

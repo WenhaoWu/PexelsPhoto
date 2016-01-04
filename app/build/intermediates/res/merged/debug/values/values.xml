@@ -293,6 +293,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_view__image_full_view">View_ImageFullView</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
