@@ -20,9 +20,9 @@ Due to the setting of volley, before compiling the project you need to put volle
 
 `git clone https://android.googlesource.com/platform/frameworks/volley`
 
-If you just wanna test the .apk file the location of it is:
+If you just wanna test :
 
-`BingWallpaper/app/build/outputs/apk/app-debug.apk`
+[Release](https://github.com/WenhaoWu/BingWallpaper/releases)
 
 ## Dependencies
 
