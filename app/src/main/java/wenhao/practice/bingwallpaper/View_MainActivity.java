@@ -43,7 +43,7 @@ public class View_MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.prepareItem(17);
+                presenter.prepareItem(16);
                 presenter.onTakeView(View_MainActivity.this);
             }
         });
