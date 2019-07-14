@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion '28.0.3'
     flavorDimensions "alpha"
 
     defaultConfig {
         applicationId "wenhao.practice.bingwallpaper"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
     }
@@ -36,8 +36,8 @@ android {
         annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
 
         //App compact
-        implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-        implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+        implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+        implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     }
 
     compileOptions {
