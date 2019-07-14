@@ -1,9 +1,9 @@
-package wenhao.practice.bingwallpaper;
+package wenhao.practice.bingwallpaper.model;
 
 /**
  * Created by wenhaowu on 29/12/15.
  */
-public class Object_Wallpaper {
+public class Wallpaper {
 
     private String img_url;
     private String copyright;
@@ -13,7 +13,7 @@ public class Object_Wallpaper {
         return date;
     }
 
-    public Object_Wallpaper(String img_url, String copyright,String date) {
+    public Wallpaper(String img_url, String copyright, String date) {
         this.img_url = img_url;
         this.copyright = copyright;
         this.date = date;
