@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import wenhao.practice.bingwallpaper.R;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    private List<Image> mImages;
+    private List<Image> mImages = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 this,
                 R.layout.activity_main
         );
+
+        mList = binding.wallpaperList;
 
         mLayoutManager = new LinearLayoutManager(this);
         mList.setLayoutManager(mLayoutManager);
