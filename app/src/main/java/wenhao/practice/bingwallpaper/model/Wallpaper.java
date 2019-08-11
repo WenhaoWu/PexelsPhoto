@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @SuppressWarnings("SpellCheckingInspection")
-public class Image {
+public class Wallpaper {
 
     @SerializedName("startdate")
     @Expose

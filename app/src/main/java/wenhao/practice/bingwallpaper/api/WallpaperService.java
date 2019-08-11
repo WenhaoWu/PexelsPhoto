@@ -7,7 +7,6 @@ import wenhao.practice.bingwallpaper.model.WallpaperResponse;
 
 public interface WallpaperService {
 
-
     @GET("/HPImageArchive.aspx?format=js&n={count}&idx={page}")
     Flowable<WallpaperResponse> fetchWallpapers(
             @Path("count") int count,

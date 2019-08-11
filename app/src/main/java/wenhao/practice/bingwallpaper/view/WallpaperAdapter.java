@@ -10,15 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import wenhao.practice.bingwallpaper.databinding.WallpaperItemBinding;
-import wenhao.practice.bingwallpaper.model.Image;
+import wenhao.practice.bingwallpaper.model.Wallpaper;
 
 class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder> {
 
-    private List<Image> mItems;
+    private List<Wallpaper> mItems;
 
-    WallpaperAdapter(List<Image> images) {
+    WallpaperAdapter(List<Wallpaper> wallpapers) {
         mItems = new ArrayList<>();
-        mItems.addAll(images);
+        mItems.addAll(wallpapers);
     }
 
     @NonNull
@@ -36,7 +36,7 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Image image = mItems.get(position);
+        Wallpaper wallpaper = mItems.get(position);
         WallpaperItemBinding binding = holder.binding;
     }
 

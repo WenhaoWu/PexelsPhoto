@@ -2,9 +2,9 @@ package wenhao.practice.bingwallpaper.infra;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
-import java.util.function.Consumer;
 
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.functions.Consumer;
 import retrofit2.Retrofit;
 
 public abstract class BasePresenter<T extends BaseContract> {
@@ -43,12 +43,12 @@ public abstract class BasePresenter<T extends BaseContract> {
         if (mViewRef != null) mViewRef.clear();
     }
 
-    public void refresh() {
+    void refresh() {
         if (mCompositeDisposable == null || mCompositeDisposable.isDisposed())
             mCompositeDisposable = new CompositeDisposable();
     }
 
-    public void unSubscribe() {
+    void unSubscribe() {
         if (mCompositeDisposable != null && !mCompositeDisposable.isDisposed())
             mCompositeDisposable.dispose();
     }
