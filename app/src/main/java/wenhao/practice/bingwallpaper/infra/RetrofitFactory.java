@@ -11,7 +11,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitFactory {
+class RetrofitFactory {
 
     private static final int TIME_OUT = 20;
 
@@ -35,7 +35,7 @@ public class RetrofitFactory {
         client = builder.build();
     }
 
-    public static RetrofitFactory getInstance() {
+    static RetrofitFactory getInstance() {
 
         RetrofitFactory localInstance = instance;
 
@@ -48,7 +48,7 @@ public class RetrofitFactory {
         return instance;
     }
 
-    public Retrofit getRetrofit(String url) {
+    Retrofit getRetrofit() {
 
         Gson gson = new GsonBuilder()
                 .serializeNulls()
@@ -56,7 +56,7 @@ public class RetrofitFactory {
 
         return new Retrofit.Builder()
                 .client(client)
-                .baseUrl(url)
+                .baseUrl(Constant.API_BASE_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();

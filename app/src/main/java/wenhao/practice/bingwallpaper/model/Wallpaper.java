@@ -49,5 +49,7 @@ public class Wallpaper {
     @Expose
     private int bot;
 
-
+    public String getUrl() {
+        return "https://www.bing.com" + url;
+    }
 }

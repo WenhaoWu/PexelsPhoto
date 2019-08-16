@@ -21,7 +21,7 @@ public enum WallpaperAction {
                 .map(page -> page + 1)
                 .flatMap(page ->
                         retrofit.create(WallpaperService.class)
-                                .fetchWallpapers(IMAGE_PER_PAGE, page)
+                                .fetchWallpapers("js", IMAGE_PER_PAGE, page)
                                 .firstOrError()
                 )
                 .map(WallpaperResponse::getWallpapers);

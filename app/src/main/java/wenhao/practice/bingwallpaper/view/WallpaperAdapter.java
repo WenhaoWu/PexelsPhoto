@@ -6,7 +6,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import wenhao.practice.bingwallpaper.databinding.WallpaperItemBinding;
@@ -38,11 +41,18 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
 
         Wallpaper wallpaper = mItems.get(position);
         WallpaperItemBinding binding = holder.binding;
+
+        Picasso.get().load(wallpaper.getUrl()).into(binding.image);
     }
 
     @Override
     public int getItemCount() {
         return mItems.size();
+    }
+
+    public void addAll(Collection<Wallpaper> images) {
+        mItems.addAll(images);
+        this.notifyDataSetChanged();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

@@ -21,7 +21,7 @@ public class MainActivity
         implements WallpaperContract {
 
     private RecyclerView mList;
-    private RecyclerView.Adapter mAdapter;
+    private WallpaperAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     private List<Wallpaper> mWallpapers = new ArrayList<>();
@@ -35,7 +35,7 @@ public class MainActivity
                 R.layout.activity_main
         );
 
-        mList = binding.wallpaperList;
+        mList = binding.list;
 
         mLayoutManager = new LinearLayoutManager(this);
         mList.setLayoutManager(mLayoutManager);
@@ -54,6 +54,6 @@ public class MainActivity
     @Override
     public void onWallpaperFetch(List<Wallpaper> wallpapers) {
         mWallpapers.addAll(wallpapers);
-        mAdapter.notifyDataSetChanged();
+        mAdapter.addAll(mWallpapers);
     }
 }

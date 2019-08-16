@@ -19,7 +19,7 @@ public abstract class BasePresenter<T extends BaseContract> {
 
         this.mRetrofit = RetrofitFactory
                 .getInstance()
-                .getRetrofit(Constant.API_BASE_URL);
+                .getRetrofit();
     }
 
     void attachView(T view) {

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class WallpaperResponse {
-    @SerializedName("wallpapers")
+    @SerializedName("images")
     @Expose
     private List<Wallpaper> wallpapers;
 
