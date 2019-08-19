@@ -50,6 +50,6 @@ public class Wallpaper {
     private int bot;
 
     public String getUrl() {
-        return "https://www.bing.com" + url;
+        return "https://www.bing.com" + url.replace("1920x1080", "1080x1920");
     }
 }

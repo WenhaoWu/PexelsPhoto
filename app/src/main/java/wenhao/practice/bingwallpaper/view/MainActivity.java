@@ -3,8 +3,8 @@ package wenhao.practice.bingwallpaper.view;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +37,9 @@ public class MainActivity
 
         mList = binding.list;
 
-        mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mList.setLayoutManager(mLayoutManager);
+        mList.addItemDecoration(new WallpaperDecoration(10, 2));
 
         mAdapter = new WallpaperAdapter(mWallpapers);
         mList.setAdapter(mAdapter);

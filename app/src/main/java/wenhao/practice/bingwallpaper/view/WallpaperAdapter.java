@@ -2,6 +2,7 @@ package wenhao.practice.bingwallpaper.view;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,17 +12,23 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Random;
 
 import wenhao.practice.bingwallpaper.databinding.WallpaperItemBinding;
 import wenhao.practice.bingwallpaper.model.Wallpaper;
 
 class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder> {
 
+    public static final int ITEM_HEIGHT_MAX = 600;
+    public static final int ITEM_HEIGHT_MIN = 400;
+    
     private List<Wallpaper> mItems;
+    private Random mRandom;
 
     WallpaperAdapter(List<Wallpaper> wallpapers) {
         mItems = new ArrayList<>();
         mItems.addAll(wallpapers);
+        mRandom = new Random();
     }
 
     @NonNull
@@ -42,7 +49,22 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
         Wallpaper wallpaper = mItems.get(position);
         WallpaperItemBinding binding = holder.binding;
 
-        Picasso.get().load(wallpaper.getUrl()).into(binding.image);
+        ImageView image = binding.image;
+
+        image.getLayoutParams().height = getRandomIntInRange();
+
+        int height = image.getLayoutParams().height;
+
+        Picasso.get()
+                .load(wallpaper.getUrl())
+                .resize(0, height)
+                .centerCrop()
+                .into(binding.image);
+    }
+
+
+    private int getRandomIntInRange() {
+        return mRandom.nextInt(ITEM_HEIGHT_MAX - ITEM_HEIGHT_MIN + ITEM_HEIGHT_MIN) + ITEM_HEIGHT_MIN;
     }
 
     @Override
@@ -50,7 +72,7 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
         return mItems.size();
     }
 
-    public void addAll(Collection<Wallpaper> images) {
+    void addAll(Collection<Wallpaper> images) {
         mItems.addAll(images);
         this.notifyDataSetChanged();
     }
