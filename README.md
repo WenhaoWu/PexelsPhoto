@@ -1,36 +1,24 @@
-# BingWallpaper
+# PexelsWallpaper
 
 Small application to practice using MVP pattern in Android.
 
-It calls the bing wallpaper ajax request to retrieve the daily wall paper.
+It calls the Pexels request to retrieve the images and set it as wallpaper.
 
 ## Demo
 
-![Gallery](https://github.com/WenhaoWu/BingWallpaper/blob/master/Demo_Pics/Gallery.png)
-
-![Wallpaper Preview](https://github.com/WenhaoWu/BingWallpaper/blob/master/Demo_Pics/Preview.png)
+Coming soon.
 
 ## API
 
-http://www.bing.com/HPImageArchive.aspx?format=js&n=8&idx=1
-
-## Usage
-
-Due to the setting of volley, before compiling the project you need to put volley into the root directory first. You can get the latest version of volley from this link:
-
-`git clone https://android.googlesource.com/platform/frameworks/volley`
-
-If you just wanna test :
-
-[Release](https://github.com/WenhaoWu/BingWallpaper/releases)
+https://www.pexels.com/api
 
 ## Dependencies
 
-[Volley](https://github.com/mcxiaoke/android-volley)
+[Retrofit](https://square.github.io/retrofit/)
 
-[Fresco](http://frescolib.org)
+[OkHttp](https://square.github.io/okhttp/)
 
-[MVP](https://github.com/konmik/konmik.github.io/wiki/Introduction-to-Model-View-Presenter-on-Android)
+[RxJava](https://github.com/ReactiveX/RxJava)
 
 ## LICENSE
 
