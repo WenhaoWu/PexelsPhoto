@@ -1,4 +1,4 @@
-package wenhao.practice.bingwallpaper.infra;
+package wenhao.practice.wallpaper.infra;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

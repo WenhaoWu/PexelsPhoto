@@ -1,12 +1,12 @@
-package wenhao.practice.bingwallpaper.action;
+package wenhao.practice.wallpaper.action;
 
 import java.util.List;
 
 import io.reactivex.Single;
 import retrofit2.Retrofit;
-import wenhao.practice.bingwallpaper.api.WallpaperService;
-import wenhao.practice.bingwallpaper.model.Wallpaper;
-import wenhao.practice.bingwallpaper.model.WallpaperResponse;
+import wenhao.practice.wallpaper.api.WallpaperService;
+import wenhao.practice.wallpaper.model.Wallpaper;
+import wenhao.practice.wallpaper.model.WallpaperResponse;
 
 public enum WallpaperAction {
     INSTANCE;

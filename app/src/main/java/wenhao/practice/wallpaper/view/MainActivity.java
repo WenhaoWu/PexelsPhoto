@@ -1,4 +1,4 @@
-package wenhao.practice.bingwallpaper.view;
+package wenhao.practice.wallpaper.view;
 
 import android.os.Bundle;
 
@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import java.util.Collections;
 import java.util.List;
 
-import wenhao.practice.bingwallpaper.R;
-import wenhao.practice.bingwallpaper.contract.WallpaperContract;
-import wenhao.practice.bingwallpaper.databinding.ActivityMainBinding;
-import wenhao.practice.bingwallpaper.infra.BaseView;
-import wenhao.practice.bingwallpaper.model.Wallpaper;
-import wenhao.practice.bingwallpaper.presenter.WallpaperPresenter;
+import wenhao.practice.wallpaper.R;
+import wenhao.practice.wallpaper.contract.WallpaperContract;
+import wenhao.practice.wallpaper.databinding.ActivityMainBinding;
+import wenhao.practice.wallpaper.infra.BaseView;
+import wenhao.practice.wallpaper.model.Wallpaper;
+import wenhao.practice.wallpaper.presenter.WallpaperPresenter;
 
 public class MainActivity
         extends BaseView<WallpaperContract, WallpaperPresenter>

@@ -1,4 +1,4 @@
-package wenhao.practice.bingwallpaper.model;
+package wenhao.practice.wallpaper.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

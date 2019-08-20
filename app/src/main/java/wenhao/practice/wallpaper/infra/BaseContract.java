@@ -1,4 +1,4 @@
-package wenhao.practice.bingwallpaper.infra;
+package wenhao.practice.wallpaper.infra;
 
 import android.content.Context;
 

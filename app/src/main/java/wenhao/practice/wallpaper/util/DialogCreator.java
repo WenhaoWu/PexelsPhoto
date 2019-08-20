@@ -1,11 +1,11 @@
-package wenhao.practice.bingwallpaper.util;
+package wenhao.practice.wallpaper.util;
 
 import android.app.AlertDialog;
 import android.content.Context;
 
 import java.lang.ref.WeakReference;
 
-import wenhao.practice.bingwallpaper.R;
+import wenhao.practice.wallpaper.R;
 
 public class DialogCreator {
 

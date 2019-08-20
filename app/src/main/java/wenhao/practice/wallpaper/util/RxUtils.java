@@ -1,9 +1,9 @@
-package wenhao.practice.bingwallpaper.util;
+package wenhao.practice.wallpaper.util;
 
 import io.reactivex.SingleTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-import wenhao.practice.bingwallpaper.infra.BaseContract;
+import wenhao.practice.wallpaper.infra.BaseContract;
 
 public enum RxUtils {
     ;

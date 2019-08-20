@@ -1,10 +1,10 @@
-package wenhao.practice.bingwallpaper.presenter;
+package wenhao.practice.wallpaper.presenter;
 
 import io.reactivex.disposables.Disposable;
-import wenhao.practice.bingwallpaper.action.WallpaperAction;
-import wenhao.practice.bingwallpaper.contract.WallpaperContract;
-import wenhao.practice.bingwallpaper.infra.BasePresenter;
-import wenhao.practice.bingwallpaper.util.RxUtils;
+import wenhao.practice.wallpaper.action.WallpaperAction;
+import wenhao.practice.wallpaper.contract.WallpaperContract;
+import wenhao.practice.wallpaper.infra.BasePresenter;
+import wenhao.practice.wallpaper.util.RxUtils;
 
 public class WallpaperPresenter extends BasePresenter<WallpaperContract> {
 

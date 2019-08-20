@@ -1,4 +1,4 @@
-package wenhao.practice.bingwallpaper.view;
+package wenhao.practice.wallpaper.view;
 
 
 import android.graphics.Rect;

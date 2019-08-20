@@ -10,7 +10,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "wenhao.practice.bingwallpaper"
+        applicationId "wenhao.practice.wallpaper"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1

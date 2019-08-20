@@ -1,9 +1,9 @@
-package wenhao.practice.bingwallpaper.api;
+package wenhao.practice.wallpaper.api;
 
 import io.reactivex.Flowable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import wenhao.practice.bingwallpaper.model.WallpaperResponse;
+import wenhao.practice.wallpaper.model.WallpaperResponse;
 
 public interface WallpaperService {
 

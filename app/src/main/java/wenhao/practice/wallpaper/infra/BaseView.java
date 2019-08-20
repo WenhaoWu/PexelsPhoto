@@ -1,11 +1,11 @@
-package wenhao.practice.bingwallpaper.infra;
+package wenhao.practice.wallpaper.infra;
 
 import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import wenhao.practice.bingwallpaper.util.DialogCreator;
+import wenhao.practice.wallpaper.util.DialogCreator;
 
 public abstract class BaseView<V extends BaseContract, T extends BasePresenter<V>>
         extends AppCompatActivity

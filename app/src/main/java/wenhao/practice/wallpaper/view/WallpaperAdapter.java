@@ -1,4 +1,4 @@
-package wenhao.practice.bingwallpaper.view;
+package wenhao.practice.wallpaper.view;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -14,8 +14,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-import wenhao.practice.bingwallpaper.databinding.WallpaperItemBinding;
-import wenhao.practice.bingwallpaper.model.Wallpaper;
+import wenhao.practice.wallpaper.databinding.WallpaperItemBinding;
+import wenhao.practice.wallpaper.model.Wallpaper;
 
 class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder> {
 
