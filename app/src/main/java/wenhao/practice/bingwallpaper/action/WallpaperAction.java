@@ -11,19 +11,12 @@ import wenhao.practice.bingwallpaper.model.WallpaperResponse;
 public enum WallpaperAction {
     INSTANCE;
 
-    private static final int IMAGE_PER_PAGE = 8;
+    private static final int IMAGE_PER_PAGE = 6;
 
-    public Single<List<Wallpaper>> fetch(Retrofit retrofit, int currentCount) {
-        return Single.just(0)
-                .map(integer -> currentCount == 0
-                        ? 0
-                        : (int) Math.ceil(currentCount / (double) IMAGE_PER_PAGE))
-                .map(page -> page + 1)
-                .flatMap(page ->
-                        retrofit.create(WallpaperService.class)
-                                .fetchWallpapers("js", IMAGE_PER_PAGE, page)
-                                .firstOrError()
-                )
+    public Single<List<Wallpaper>> fetch(Retrofit retrofit, int count) {
+        return retrofit.create(WallpaperService.class)
+                .fetchWallpapers("js", IMAGE_PER_PAGE, count == 0 ? count : count + 1)
+                .firstOrError()
                 .map(WallpaperResponse::getWallpapers);
     }
 }

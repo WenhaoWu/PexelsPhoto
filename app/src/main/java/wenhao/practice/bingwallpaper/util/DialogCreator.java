@@ -20,7 +20,7 @@ public class DialogCreator {
         if (mInstance == null || !context.getApplicationContext().equals(mInstance.mContextRef.get())) {
             Class clazz = DialogCreator.class;
             synchronized (clazz) {
-                mInstance = new DialogCreator(context.getApplicationContext());
+                mInstance = new DialogCreator(context);
             }
         }
         return mInstance;

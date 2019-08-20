@@ -69,13 +69,7 @@ public abstract class BaseView<V extends BaseContract, T extends BasePresenter<V
 
     @Override
     public Context ensureContext() {
-
-        Context context = this.getBaseContext();
-
-        if (context != null)
-            return context;
-        else
-            throw new IllegalStateException(this + " as BaseView does not have context");
+        return this;
     }
 
     protected abstract T createPresenter();

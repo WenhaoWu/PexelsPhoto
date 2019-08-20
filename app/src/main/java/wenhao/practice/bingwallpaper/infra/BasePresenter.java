@@ -3,6 +3,7 @@ package wenhao.practice.bingwallpaper.infra;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 
+import io.reactivex.SingleTransformer;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import retrofit2.Retrofit;
@@ -13,6 +14,7 @@ public abstract class BasePresenter<T extends BaseContract> {
     protected Retrofit mRetrofit;
 
     private Reference<T> mViewRef;
+    protected boolean mLoading = false;
 
     private void init() {
         this.mCompositeDisposable = new CompositeDisposable();
@@ -55,6 +57,12 @@ public abstract class BasePresenter<T extends BaseContract> {
 
     protected Consumer<Throwable> error() {
         return throwable -> mView.onTaskError(throwable);
+    }
+
+    protected <T> SingleTransformer<T, T> loading() {
+        return upstream -> upstream
+                .doOnSubscribe(s -> mLoading = true)
+                .doOnEvent((subscriptionResponse, throwable) -> mLoading = false);
     }
 
 }
