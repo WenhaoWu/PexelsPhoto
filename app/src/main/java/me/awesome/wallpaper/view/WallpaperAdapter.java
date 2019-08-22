@@ -73,8 +73,13 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
     }
 
     void addAll(Collection<Wallpaper> images) {
+
+        if (images.isEmpty()) return;
+
+        int start = mItems.size();
         mItems.addAll(images);
-        this.notifyDataSetChanged();
+        for (int i = start; i < mItems.size(); i++)
+            this.notifyItemInserted(start);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
