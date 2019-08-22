@@ -10,7 +10,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "wenhao.practice.wallpaper"
+        applicationId "me.awesome.wallpaper"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
@@ -39,9 +39,11 @@ android {
         api fileTree(include: ['*.jar'], dir: 'libs')
         testImplementation 'junit:junit:4.12'
 
+        def lifecycle_version = "2.0.0"
+
         //Lifecycle
-        implementation "android.arch.lifecycle:extensions:1.1.1"
-        annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+        implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+        implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
         //App compact
         implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
