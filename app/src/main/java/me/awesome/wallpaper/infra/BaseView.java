@@ -1,15 +1,19 @@
 package me.awesome.wallpaper.infra;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import me.awesome.wallpaper.util.DialogCreator;
+import me.awesome.wallpaper.util.ProgressDialogBuilder;
 
 public abstract class BaseView<V extends BaseContract, T extends BasePresenter<V>>
         extends AppCompatActivity
         implements BaseContract {
+
+    private ProgressDialog mProgress;
 
     protected T mPresenter;
 
@@ -31,8 +35,18 @@ public abstract class BaseView<V extends BaseContract, T extends BasePresenter<V
         super.onDestroy();
     }
 
+    protected boolean isLoading() {
+        return mProgress != null && mProgress.isShowing();
+    }
+
     @Override
     public void onTaskStart() {
+
+        if (mProgress == null)
+            mProgress = ProgressDialogBuilder.createProgressDialog(this);
+
+        if (mProgress != null)
+            mProgress.show();
 
     }
 
@@ -42,6 +56,9 @@ public abstract class BaseView<V extends BaseContract, T extends BasePresenter<V
         if (ensureContext() == null)
             return;
 
+        if (isLoading())
+            mProgress.dismiss();
+
         DialogCreator dialog = DialogCreator.getInstance(ensureContext());
 
         dialog.showGeneralErrorDialog();
@@ -49,7 +66,8 @@ public abstract class BaseView<V extends BaseContract, T extends BasePresenter<V
 
     @Override
     public void onTaskComplete() {
-
+        if (isLoading())
+            mProgress.dismiss();
     }
 
     @Override
