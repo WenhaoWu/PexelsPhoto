@@ -1,12 +1,12 @@
-package me.awesome.wallpaper.presenter;
+package me.awesome.photo.presenter;
 
 import io.reactivex.disposables.Disposable;
-import me.awesome.wallpaper.action.WallpaperAction;
-import me.awesome.wallpaper.contract.WallpaperContract;
-import me.awesome.wallpaper.infra.BasePresenter;
-import me.awesome.wallpaper.util.RxUtils;
+import me.awesome.photo.action.PhotoAction;
+import me.awesome.photo.contract.PhotoContract;
+import me.awesome.photo.infra.BasePresenter;
+import me.awesome.photo.util.RxUtils;
 
-public class WallpaperPresenter extends BasePresenter<WallpaperContract> {
+public class PhotoPresenter extends BasePresenter<PhotoContract> {
 
     public void fetchWallpaper(int count) {
 
@@ -14,7 +14,7 @@ public class WallpaperPresenter extends BasePresenter<WallpaperContract> {
 
         Disposable mSubscription;
 
-        mSubscription = WallpaperAction.INSTANCE
+        mSubscription = PhotoAction.INSTANCE
                 .fetch(mRetrofit, count)
                 .compose(RxUtils.thread(mView))
                 .compose(loading())

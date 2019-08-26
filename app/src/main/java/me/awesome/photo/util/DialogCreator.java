@@ -1,11 +1,11 @@
-package me.awesome.wallpaper.util;
+package me.awesome.photo.util;
 
 import android.app.AlertDialog;
 import android.content.Context;
 
 import java.lang.ref.WeakReference;
 
-import me.awesome.wallpaper.R;
+import me.awesome.photo.R;
 
 public class DialogCreator {
 

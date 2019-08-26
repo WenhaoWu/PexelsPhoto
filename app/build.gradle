@@ -10,11 +10,18 @@ android {
     }
 
     defaultConfig {
-        applicationId "me.awesome.wallpaper"
+        applicationId "me.awesome.photo"
         minSdkVersion 24
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        Properties properties = new Properties()
+        def propertiesFile = project.rootProject.file('local.properties')
+        if (propertiesFile.exists()) {
+            properties.load(propertiesFile.newDataInputStream())
+        }
+        ext.apiToken = properties.getProperty('api.token')
+        buildConfigField "String", "PEXELS_API_TOKEN", "\"${ext.apiToken}\""
     }
 
     buildTypes {

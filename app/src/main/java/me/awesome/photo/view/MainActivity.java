@@ -1,4 +1,4 @@
-package me.awesome.wallpaper.view;
+package me.awesome.photo.view;
 
 import android.os.Bundle;
 
@@ -10,18 +10,18 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import java.util.Collections;
 import java.util.List;
 
-import me.awesome.wallpaper.R;
-import me.awesome.wallpaper.contract.WallpaperContract;
+import me.awesome.photo.R;
+import me.awesome.photo.contract.PhotoContract;
+import me.awesome.photo.infra.BaseView;
+import me.awesome.photo.model.Photo;
+import me.awesome.photo.presenter.PhotoPresenter;
 import me.awesome.wallpaper.databinding.ActivityMainBinding;
-import me.awesome.wallpaper.infra.BaseView;
-import me.awesome.wallpaper.model.Wallpaper;
-import me.awesome.wallpaper.presenter.WallpaperPresenter;
 
 public class MainActivity
-        extends BaseView<WallpaperContract, WallpaperPresenter>
-        implements WallpaperContract {
+        extends BaseView<PhotoContract, PhotoPresenter>
+        implements PhotoContract {
 
-    private WallpaperAdapter mAdapter;
+    private PhotoAdapter mAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,9 +40,9 @@ public class MainActivity
         );
 
         list.setLayoutManager(manager);
-        list.addItemDecoration(new WallpaperDecoration(10, 2));
+        list.addItemDecoration(new PhotoDecoration(10, 2));
 
-        mAdapter = new WallpaperAdapter(Collections.emptyList());
+        mAdapter = new PhotoAdapter(Collections.emptyList());
 
         list.setAdapter(mAdapter);
         list.addOnScrollListener(bottomListener());
@@ -67,12 +67,12 @@ public class MainActivity
     }
 
     @Override
-    protected WallpaperPresenter createPresenter() {
-        return new WallpaperPresenter();
+    protected PhotoPresenter createPresenter() {
+        return new PhotoPresenter();
     }
 
     @Override
-    public void onWallpaperFetch(List<Wallpaper> wallpapers) {
-        mAdapter.addAll(wallpapers);
+    public void onWallpaperFetch(List<Photo> photos) {
+        mAdapter.addAll(photos);
     }
 }

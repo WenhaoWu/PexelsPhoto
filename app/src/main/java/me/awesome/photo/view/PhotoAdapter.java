@@ -1,4 +1,4 @@
-package me.awesome.wallpaper.view;
+package me.awesome.photo.view;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -14,20 +14,20 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-import me.awesome.wallpaper.databinding.WallpaperItemBinding;
-import me.awesome.wallpaper.model.Wallpaper;
+import me.awesome.photo.databinding.PhotoItemBinding;
+import me.awesome.photo.model.Photo;
 
-class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder> {
+class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> {
 
-    public static final int ITEM_HEIGHT_MAX = 600;
-    public static final int ITEM_HEIGHT_MIN = 400;
-    
-    private List<Wallpaper> mItems;
+    public static final int ITEM_HEIGHT_MAX = 650;
+    public static final int ITEM_HEIGHT_MIN = 450;
+
+    private List<Photo> mItems;
     private Random mRandom;
 
-    WallpaperAdapter(List<Wallpaper> wallpapers) {
+    PhotoAdapter(List<Photo> photos) {
         mItems = new ArrayList<>();
-        mItems.addAll(wallpapers);
+        mItems.addAll(photos);
         mRandom = new Random();
     }
 
@@ -37,8 +37,8 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
         LayoutInflater layoutInflater =
                 LayoutInflater.from(parent.getContext());
 
-        WallpaperItemBinding binding =
-                WallpaperItemBinding.inflate(layoutInflater, parent, false);
+        PhotoItemBinding binding =
+                PhotoItemBinding.inflate(layoutInflater, parent, false);
 
         return new ViewHolder(binding);
     }
@@ -46,8 +46,8 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Wallpaper wallpaper = mItems.get(position);
-        WallpaperItemBinding binding = holder.binding;
+        Photo photo = mItems.get(position);
+        PhotoItemBinding binding = holder.binding;
 
         ImageView image = binding.image;
 
@@ -56,9 +56,9 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
         int height = image.getLayoutParams().height;
 
         Picasso.get()
-                .load(wallpaper.getUrl())
+                .load(photo.getSrc().getPortrait())
                 .resize(0, height)
-                .centerCrop()
+                .centerInside()
                 .into(binding.image);
     }
 
@@ -72,7 +72,7 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
         return mItems.size();
     }
 
-    void addAll(Collection<Wallpaper> images) {
+    void addAll(Collection<Photo> images) {
 
         if (images.isEmpty()) return;
 
@@ -83,9 +83,9 @@ class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.ViewHolder>
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        private WallpaperItemBinding binding;
+        private PhotoItemBinding binding;
 
-        private ViewHolder(WallpaperItemBinding binding) {
+        private ViewHolder(PhotoItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

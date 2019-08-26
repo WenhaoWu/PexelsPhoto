@@ -1,4 +1,4 @@
-package me.awesome.wallpaper.infra;
+package me.awesome.photo.infra;
 
 import android.content.Context;
 

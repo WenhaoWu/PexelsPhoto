@@ -1,4 +1,4 @@
-package me.awesome.wallpaper.infra;
+package me.awesome.photo.infra;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,7 +30,8 @@ class RetrofitFactory {
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .writeTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .readTimeout(TIME_OUT, TimeUnit.SECONDS)
-                .addInterceptor(httpAgent);
+                .addInterceptor(httpAgent)
+                .addInterceptor(new AuthInterceptor());
 
         client = builder.build();
     }

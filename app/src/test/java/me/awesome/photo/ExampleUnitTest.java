@@ -1,4 +1,4 @@
-package me.awesome.wallpaper;
+package me.awesome.photo;
 
 import org.junit.Test;
 

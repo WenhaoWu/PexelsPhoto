@@ -1,4 +1,4 @@
-package me.awesome.wallpaper.infra;
+package me.awesome.photo.infra;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -6,8 +6,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import me.awesome.wallpaper.util.DialogCreator;
-import me.awesome.wallpaper.util.ProgressDialogBuilder;
+import me.awesome.photo.util.DialogCreator;
+import me.awesome.photo.util.ProgressDialogBuilder;
 
 public abstract class BaseView<V extends BaseContract, T extends BasePresenter<V>>
         extends AppCompatActivity

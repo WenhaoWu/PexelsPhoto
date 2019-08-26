@@ -1,4 +1,4 @@
-package me.awesome.wallpaper.view;
+package me.awesome.photo.view;
 
 
 import android.graphics.Rect;
@@ -7,14 +7,14 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class WallpaperDecoration extends RecyclerView.ItemDecoration {
+public class PhotoDecoration extends RecyclerView.ItemDecoration {
 
     private final int mSizeGridSpacingPx;
     private final int mGridSize;
 
     private boolean mNeedLeftSpacing = false;
 
-    WallpaperDecoration(int mSizeGridSpacingPx, int mGridSize) {
+    PhotoDecoration(int mSizeGridSpacingPx, int mGridSize) {
         this.mSizeGridSpacingPx = mSizeGridSpacingPx;
         this.mGridSize = mGridSize;
     }

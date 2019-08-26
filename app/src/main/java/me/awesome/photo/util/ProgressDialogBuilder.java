@@ -1,4 +1,4 @@
-package me.awesome.wallpaper.util;
+package me.awesome.photo.util;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import java.lang.ref.WeakReference;
 import java.util.Objects;
 
-import me.awesome.wallpaper.R;
+import me.awesome.photo.R;
 
 public enum ProgressDialogBuilder {
     ;
