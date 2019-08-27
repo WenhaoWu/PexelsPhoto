@@ -11,7 +11,7 @@ import retrofit2.Retrofit;
 public enum PhotoAction {
     INSTANCE;
 
-    private static final int IMAGE_PER_PAGE = 15;
+    private static final int IMAGE_PER_PAGE = 14;
 
     public Single<List<Photo>> fetch(Retrofit retrofit, int count) {
 

@@ -58,7 +58,7 @@ class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.ViewHolder> {
         Picasso.get()
                 .load(photo.getSrc().getPortrait())
                 .resize(0, height)
-                .centerInside()
+                .centerCrop()
                 .into(binding.image);
     }
 

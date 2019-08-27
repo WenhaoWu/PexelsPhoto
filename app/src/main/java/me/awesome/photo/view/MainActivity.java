@@ -12,10 +12,10 @@ import java.util.List;
 
 import me.awesome.photo.R;
 import me.awesome.photo.contract.PhotoContract;
+import me.awesome.photo.databinding.ActivityMainBinding;
 import me.awesome.photo.infra.BaseView;
 import me.awesome.photo.model.Photo;
 import me.awesome.photo.presenter.PhotoPresenter;
-import me.awesome.wallpaper.databinding.ActivityMainBinding;
 
 public class MainActivity
         extends BaseView<PhotoContract, PhotoPresenter>
