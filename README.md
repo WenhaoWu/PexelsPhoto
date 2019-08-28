@@ -23,3 +23,5 @@ https://www.pexels.com/api
 ## LICENSE
 
 [Apache License](https://github.com/WenhaoWu/BingWallpaper/blob/master/LICENSE)
+
+## Action
