@@ -39,6 +39,15 @@ android {
         }
     }
 
+    lintOptions {
+        quiet false
+        abortOnError true
+        ignoreWarnings false
+        noLines false
+        showAll true
+        lintConfig file("tools/ling-config.xml")
+    }
+
     def retrofitVersion = '2.5.0'
     def okHttpVersion = '4.0.1'
 
